@@ -19,9 +19,11 @@ module.exports = function(){
         if(file.isStream()) {
 
         	file.contents = file.contents.pipe(stripBom.stream());
-        } else {
-        	//is buffer or string
-        	file = stripBom(file);
+        } 
+        //is buffer
+        if(file.isBuffer()) {
+
+        	file.contents = stripBom(file.contents);
         }
         // make sure the file goes through the next gulp plugin
         this.push(file);

@@ -13,6 +13,10 @@ gulp-stripbom
 				.pipe(stripBom())
 				.pipe(gulp.dest('dest'));
 	});
+
+## Test
+
+	npm test
 	
 ## License
 

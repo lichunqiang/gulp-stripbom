@@ -4,7 +4,8 @@
   "description": "strip bom of files/string",
   "main": "index.js",
   "scripts": {
-    "test": "gulp & gulp test-stream"
+    "test": "mocha",
+    "gulp": "gulp & gulp test-stream"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,9 @@
     "through2": "^0.5.1"
   },
   "devDependencies": {
-    "gulp": "^3.8.5"
+    "event-stream": "^3.1.5",
+    "gulp": "^3.8.5",
+    "mocha": "^1.20.1",
+    "vinyl": "^0.2.3"
   }
 }
