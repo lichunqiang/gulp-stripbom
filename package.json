@@ -1,0 +1,34 @@
+{
+  "name": "gulp-stripbom",
+  "version": "0.1.0",
+  "description": "strip bom of files/string",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp & gulp test-stream"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lichunqiang/gulp-stripbom"
+  },
+  "keywords": [
+    "gulp",
+    "plugin",
+    "bom",
+    "strip",
+    "gulpplugin"
+  ],
+  "author": "light",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lichunqiang/gulp-stripbom/issues"
+  },
+  "homepage": "https://github.com/lichunqiang/gulp-stripbom",
+  "dependencies": {
+    "gulp-util": "^2.2.19",
+    "strip-bom": "^0.3.1",
+    "through2": "^0.5.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.5"
+  }
+}
