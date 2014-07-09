@@ -70,4 +70,26 @@ describe('gulp-stripbom', function(){
 		});			
 
 	});
+
+	it('should let null files pass through', function(done) {
+	        var stream = stripBom();
+
+	        var mockFile = new File({
+	        	contents: null
+	        });
+
+			stream.on('data', function(file){
+				assert(file.isNull());
+
+				assert.equal(file.contents, null)
+			});
+
+			stream.on('end', function(){
+				done();
+			});
+
+			stream.write(mockFile);
+
+			stream.end();
+	    });	
 });
