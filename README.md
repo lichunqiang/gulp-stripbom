@@ -24,6 +24,14 @@ Type: `String` or `Array`
 
 Filter files by ext those to process.
 
+### options.showLog
+
+Type: `Boolean`
+
+Default: `true`
+
+If show log or not.
+
 ## Test
 
 	npm test
