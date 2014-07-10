@@ -7,7 +7,7 @@ var stripBom = require('./');
 gulp.task('default', function(){
 
 	return gulp.src('1.txt')
-			.pipe(stripBom())
+			.pipe(stripBom({ext: ['txt', 'php']}))
 			.pipe(gulp.dest('dest-buffer'));
 });
 

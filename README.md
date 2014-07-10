@@ -14,6 +14,16 @@ gulp-stripbom
 				.pipe(gulp.dest('dest'));
 	});
 
+## API
+
+### stripBom(options)
+
+### options.ext
+
+Type: `String` or `Array`
+
+Filter files by ext those to process.
+
 ## Test
 
 	npm test
