@@ -1,6 +1,6 @@
 {
   "name": "gulp-stripbom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "strip bom of files/string",
   "main": "index.js",
   "scripts": {
