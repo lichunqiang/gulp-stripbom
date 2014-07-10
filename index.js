@@ -6,8 +6,18 @@ var stripBom = require('strip-bom');
 
 var PLUGIN_NAME = 'gulp-stripbom';
 
+var symbols = {
+    ok: '√',
+    err: '×'
+};
+if ('win32' == process.platform) {
+    symbols.ok = '\u221A';
+    symbols.err = '\u00D7';
+}
+
 module.exports = function(opts){
     if(!opts) opts = {};
+    opts.showLog === undefined && (opts.showLog = true);
 
 	return through.obj(function(file, enc, cb){
 
@@ -37,7 +47,10 @@ module.exports = function(opts){
         }
         // make sure the file goes through the next gulp plugin
         this.push(file);
-        console.log(gutil.colors.green('The file bom is be striped'));
+        if(opts.showLog) {
+            
+            gutil.log(gutil.colors.cyan(PLUGIN_NAME + ':'), file.relative + ' ' + gutil.colors.green(symbols.ok));
+        }
 
         // tell the stream engine that we are done with this file
 		cb();
