@@ -28,8 +28,8 @@ module.exports = function(opts){
         }
         var fileExt = path.extname(file.path).slice(1);
         //check file ext
-        if(opts.ext && isArray(opts.ext) || isString(opts.ext)) {
-            isString(opts.ext) && (opts.ext = [opts.ext]);
+        if(opts.ext) {
+            var fileExt = Array.isArray(opts.ext) ? opts.ext : [opts.ext];
             if(opts.ext.indexOf(fileExt) === -1) {
                 this.push(file);
                 return cb();
@@ -57,12 +57,4 @@ module.exports = function(opts){
 	}).on('error', function(err){
 		throw new gutil.PluginError(PLUGIN_NAME, err.message);
 	});
-}
-
-function isArray(input) {
-    return Object.prototype.toString.call(input) === '[object Array]';
-}
-
-function isString(input) {
-    return Object.prototype.toString.call(input) === '[object String]';
 }
