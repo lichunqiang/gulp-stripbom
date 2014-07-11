@@ -29,8 +29,8 @@ module.exports = function(opts){
         var fileExt = path.extname(file.path).slice(1);
         //check file ext
         if(opts.ext) {
-            var fileExt = Array.isArray(opts.ext) ? opts.ext : [opts.ext];
-            if(opts.ext.indexOf(fileExt) === -1) {
+            var filexts = Array.isArray(opts.ext) ? opts.ext : [opts.ext];
+            if(filexts.indexOf(fileExt) === -1) {
                 this.push(file);
                 return cb();
             }
