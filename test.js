@@ -12,6 +12,9 @@ describe('gulp-stripbom', function(){
 
 		it('should strip the bom', function(done){
 			var mockFile =  new File({
+				cwd: "/",
+				base: "/test/",
+				path: "/test/file.coffee",
 				contents: new Buffer('\ufeffUnicorn')
 			});
 
@@ -45,6 +48,9 @@ describe('gulp-stripbom', function(){
 			mockStream.end();
 
 			var mockFile = new File({
+				cwd: "/",
+				base: "/test/",
+				path: "/test/file.coffee",				
 				contents: mockStream
 			});
 
@@ -71,10 +77,67 @@ describe('gulp-stripbom', function(){
 
 	});
 
+	it('should not process file', function(done){
+		var mockFile =  new File({
+			cwd: "/",
+			base: "/test/",
+			path: "/test/file.coffee",			
+			contents: new Buffer('\ufeffUnicorn')
+		});
+
+		var stream = stripBom({ext:'js'});			
+
+		stream.on('data', function(file){
+			assert(file.isBuffer());
+
+			assert.equal(file.contents.toString('utf-8'), '\ufeffUnicorn');
+
+		});
+
+		stream.on('end', function(){
+			done();
+		});
+
+		stream.write(mockFile);
+
+		stream.end();
+
+	});
+
+	it('should process file', function(done){
+		var mockFile =  new File({
+			cwd: "/",
+			base: "/test/",
+			path: "/test/file.coffee",			
+			contents: new Buffer('\ufeffUnicorn')
+		});
+
+		var stream = stripBom({ext:['js', 'coffee']});			
+
+		stream.on('data', function(file){
+			assert(file.isBuffer());
+
+			assert.equal(file.contents.toString('utf-8'), 'Unicorn');
+
+		});
+
+		stream.on('end', function(){
+			done();
+		});
+
+		stream.write(mockFile);
+
+		stream.end();
+
+	});	
+
 	it('should let null files pass through', function(done) {
 	        var stream = stripBom();
 
 	        var mockFile = new File({
+				cwd: "/",
+				base: "/test/",
+				path: "/test/file.coffee",	        	
 	        	contents: null
 	        });
 
