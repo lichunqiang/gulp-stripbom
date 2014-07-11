@@ -1,6 +1,17 @@
 gulp-stripbom
 ------------------------
 
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][david-dm-image]][david-dm-url]
+
+[npm-url]:         https://badge.fury.io/js/gulp-stripbom
+[npm-image]:       https://badge.fury.io/js/gulp-stripbom.png
+[travis-url]:      https://travis-ci.org/lichunqiang/gulp-stripbom
+[travis-image]:    https://travis-ci.org/lichunqiang/gulp-stripbom.png?branch=master
+[david-dm-url]:    https://david-dm.org/lichunqiang/gulp-stripbom
+[david-dm-image]:  https://david-dm.org/lichunqiang/gulp-stripbom.png?theme=shields.io
+
 > This is inspired by [strip-bom](https://github.com/sindresorhus/strip-bom) for gulp.
 
 ## Usage
