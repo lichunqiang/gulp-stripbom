@@ -1,16 +1,13 @@
 gulp-stripbom
 ------------------------
 
-[![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][david-dm-image]][david-dm-url]
+[![Version][version]](https://npmjs.org/package/gulp-stripbom)
+[![Dependency Status][deps]](https://david-dm.org/lichunqiang/gulp-stripbom)
+[![Downloads][downloads]](https://npmjs.org/package/gulp-stripbom)
 
-[npm-url]:         https://badge.fury.io/js/gulp-stripbom
-[npm-image]:       https://badge.fury.io/js/gulp-stripbom.png
-[travis-url]:      https://travis-ci.org/lichunqiang/gulp-stripbom
-[travis-image]:    https://travis-ci.org/lichunqiang/gulp-stripbom.png?branch=master
-[david-dm-url]:    https://david-dm.org/lichunqiang/gulp-stripbom
-[david-dm-image]:  https://david-dm.org/lichunqiang/gulp-stripbom.png?theme=shields.io
+[version]: http://img.shields.io/npm/v/gulp-stripbom.svg?style=flat
+[deps]: http://img.shields.io/david/lichunqiang/gulp-stripbom.svg?style=flat
+[downloads]: http://img.shields.io/npm/dm/gulp-stripbom.svg?style=flat
 
 > This is inspired by [strip-bom](https://github.com/sindresorhus/strip-bom) for gulp.
 
