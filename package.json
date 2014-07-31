@@ -26,6 +26,7 @@
   "homepage": "https://github.com/lichunqiang/gulp-stripbom",
   "dependencies": {
     "gulp-util": "^3.0.0",
+    "log-symbols": "^1.0.0",
     "strip-bom": "^0.3.1",
     "through2": "^0.5.1"
   },

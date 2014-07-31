@@ -3,17 +3,9 @@ var path  = require('path');
 var gutil = require('gulp-util');
 var through = require('through2');
 var stripBom = require('strip-bom');
+var symbols = require('log-symbols');
 
 var PLUGIN_NAME = 'gulp-stripbom';
-
-var symbols = {
-    ok: '√',
-    err: '×'
-};
-if ('win32' === process.platform) {
-    symbols.ok = '\u221A';
-    symbols.err = '\u00D7';
-}
 
 module.exports = function(opts){
     if(!opts) {
@@ -43,18 +35,18 @@ module.exports = function(opts){
         if(file.isStream()) {
 
         	file.contents = file.contents.pipe(stripBom.stream());
-        } 
+        }
 
         //is buffer
         if(file.isBuffer()) {
 
         	file.contents = stripBom(file.contents);
         }
-        
+
         // make sure the file goes through the next gulp plugin
         this.push(file);
         if(opts.showLog) {
-            gutil.log(gutil.colors.cyan(PLUGIN_NAME + ':'), file.relative + ' ' + gutil.colors.green(symbols.ok));
+            gutil.log(gutil.colors.cyan(PLUGIN_NAME + ':'), file.relative + ' ' + symbols.success);
         }
 
         // tell the stream engine that we are done with this file
