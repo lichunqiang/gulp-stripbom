@@ -16,6 +16,7 @@ gulp-stripbom
 
 ## Usage
 
+```javascript
 	var stripBom = require('gulp-stripbom');
 
 	gulp.task('default', function(){
@@ -24,6 +25,7 @@ gulp-stripbom
 				.pipe(stripBom())
 				.pipe(gulp.dest('dest'));
 	});
+```
 
 ## API
 
@@ -45,8 +47,10 @@ If show log or not.
 
 ## Test
 
-	npm test
-	
+```sh
+$ npm test
+```
+
 ## License
 
 MIT
