@@ -17,14 +17,14 @@ gulp-stripbom
 ## Usage
 
 ```javascript
-	var stripBom = require('gulp-stripbom');
+var stripBom = require('gulp-stripbom');
 
-	gulp.task('default', function(){
+gulp.task('default', function(){
 
-		return gulp.src('1.txt')
-				.pipe(stripBom())
-				.pipe(gulp.dest('dest'));
-	});
+	return gulp.src('1.txt')
+			.pipe(stripBom())
+			.pipe(gulp.dest('dest'));
+});
 ```
 
 ## API
