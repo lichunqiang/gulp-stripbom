@@ -18,7 +18,7 @@ describe('gulp-stripbom', function(){
 				contents: new Buffer('\ufeffUnicorn')
 			});
 
-			var stream = stripBom();			
+			var stream = stripBom();
 
 			stream.on('data', function(file){
 				assert(file.isBuffer());
@@ -50,11 +50,11 @@ describe('gulp-stripbom', function(){
 			var mockFile = new File({
 				cwd: "/",
 				base: "/test/",
-				path: "/test/file.coffee",				
+				path: "/test/file.coffee",
 				contents: mockStream
 			});
 
-			var stream = stripBom();			
+			var stream = stripBom();
 
 			stream.on('data', function(file){
 				assert(file.isStream());
@@ -73,7 +73,7 @@ describe('gulp-stripbom', function(){
 
 			stream.end();
 
-		});			
+		});
 
 	});
 
@@ -81,11 +81,11 @@ describe('gulp-stripbom', function(){
 		var mockFile =  new File({
 			cwd: "/",
 			base: "/test/",
-			path: "/test/file.coffee",			
+			path: "/test/file.coffee",
 			contents: new Buffer('\ufeffUnicorn')
 		});
 
-		var stream = stripBom({ext:'js'});			
+		var stream = stripBom({ext:'js'});
 
 		stream.on('data', function(file){
 			assert(file.isBuffer());
@@ -108,11 +108,11 @@ describe('gulp-stripbom', function(){
 		var mockFile =  new File({
 			cwd: "/",
 			base: "/test/",
-			path: "/test/file.coffee",			
+			path: "/test/file.coffee",
 			contents: new Buffer('\ufeffUnicorn')
 		});
 
-		var stream = stripBom({ext:['js', 'coffee']});			
+		var stream = stripBom({ext:['js', 'coffee']});
 
 		stream.on('data', function(file){
 			assert(file.isBuffer());
@@ -129,7 +129,7 @@ describe('gulp-stripbom', function(){
 
 		stream.end();
 
-	});	
+	});
 
 	it('should let null files pass through', function(done) {
 	        var stream = stripBom();
@@ -137,7 +137,7 @@ describe('gulp-stripbom', function(){
 	        var mockFile = new File({
 				cwd: "/",
 				base: "/test/",
-				path: "/test/file.coffee",	        	
+				path: "/test/file.coffee",
 	        	contents: null
 	        });
 
@@ -154,5 +154,5 @@ describe('gulp-stripbom', function(){
 			stream.write(mockFile);
 
 			stream.end();
-	    });	
+	    });
 });

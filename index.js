@@ -1,9 +1,11 @@
 'use strict';
 var path  = require('path');
-var gutil = require('gulp-util');
 var through = require('through2');
 var stripBom = require('strip-bom');
 var symbols = require('log-symbols');
+var log = require('fancy-log');
+var c = require('ansi-colors');
+var PluginError = require('plugin-error');
 
 var PLUGIN_NAME = 'gulp-stripbom';
 
@@ -46,12 +48,12 @@ module.exports = function(opts){
         // make sure the file goes through the next gulp plugin
         this.push(file);
         if(opts.showLog) {
-            gutil.log(gutil.colors.cyan(PLUGIN_NAME + ':'), file.relative + ' ' + symbols.success);
+            log(c.cyan(PLUGIN_NAME + ':'), file.relative + ' ' + symbols.success);
         }
 
         // tell the stream engine that we are done with this file
 		cb();
 	}).on('error', function(err){
-		throw new gutil.PluginError(PLUGIN_NAME, err.message);
+		throw new PluginError(PLUGIN_NAME, err.message);
 	});
 };
